@@ -4,7 +4,7 @@ from .views import MailingViewSet
 
 
 router = DefaultRouter()
-router.register(r'recipients', MailingViewSet)
+router.register(r'mailing', MailingViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
