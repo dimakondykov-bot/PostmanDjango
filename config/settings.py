@@ -18,6 +18,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_apscheduler',
     'rest_framework',
     'client_management',
     'message_management',
@@ -85,7 +86,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
@@ -95,3 +96,10 @@ USE_TZ = True
 
 
 STATIC_URL = 'static/'
+
+# Настройки почты для разработки (вывод в консоль)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Этот адрес будет отображаться в поле "От кого"
+DEFAULT_FROM_EMAIL = 'test@example.com'
+
