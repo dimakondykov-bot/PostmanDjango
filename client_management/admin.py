@@ -1,3 +1,9 @@
 from django.contrib import admin
+from client_management.models import Recipient
 
-# Register your models here.
+@admin.register(Recipient)
+class RecipienttAdmin(admin.ModelAdmin):
+    list_display = ('full_name', 'email','comment')
+    list_filter = ('full_name','email')
+
+
