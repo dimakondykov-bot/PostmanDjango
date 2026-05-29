@@ -1,5 +1,3 @@
-from django.contrib.auth.base_user import BaseUserManager
-from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 
@@ -23,13 +21,11 @@ class UserManager(BaseUserManager):
 class User(AbstractUser):
 
     username = None
-
     email = models.EmailField(unique=True, verbose_name='Email')
-
+    is_verified = models.BooleanField(default=False, verbose_name='Почта подтверждена')
+    verification_code = models.CharField(max_length=25,blank=True, null=True, verbose_name='Код подтверждения')
     objects = UserManager()
-
     USERNAME_FIELD = 'email'
-
     REQUIRED_FIELDS = []
 
     class Meta:

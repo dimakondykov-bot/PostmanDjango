@@ -99,3 +99,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'test@example.com'
 
 AUTH_USER_MODEL = 'users.User'
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'postman-django-cache',
+    }
+}

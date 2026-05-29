@@ -3,8 +3,8 @@ from mailing.models import Mailing, MailingLog
 
 @admin.register(Mailing)
 class MailingAdmin(admin.ModelAdmin):
-    list_display = ('started_at', 'status', 'message')
-    list_filter = ('status',)
+    list_display = ('id', 'start_time','end_time', 'status', 'message','owner')
+    list_filter = ('is_active', 'start_time')
 
 @admin.register(MailingLog)
 class MailingLogAdmin(admin.ModelAdmin):
