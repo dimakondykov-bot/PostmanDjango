@@ -4,8 +4,8 @@ from .views import ClientViewSet
 
 
 router = DefaultRouter()
-router.register(r'recipients', ClientViewSet,  basename='client')
+router.register(r"recipients", ClientViewSet, basename="client")
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path("", include(router.urls)),
 ]
